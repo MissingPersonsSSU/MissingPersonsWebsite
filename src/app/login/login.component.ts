@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BasicLogin } from '../core/model/basicLogin';
+import { AuthService } from '../core/firebaseCalls/Auth/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   basicLogin: BasicLogin;
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
     this.basicLogin = new BasicLogin();
@@ -27,4 +29,10 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  loginGoogle() {
+    this.auth.doGoogleLogin()
+    .then(res => {
+     alert('Logged in' + res.displayName);
+    });
+  }
 }
