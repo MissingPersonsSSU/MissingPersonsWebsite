@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   errorMessage = '';
-  googlePath = 'src\assets\Social-Media-Icons\Google.png';
 
   constructor() { }
 
