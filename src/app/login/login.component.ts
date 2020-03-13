@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit {
 
   SubmitBasicLogin() {
     if (this.basicLogin.email == null) {
-      this.errorMessage = 'Email can not be empty';
+      this.errorMessage = 'Please enter a valid Email';
     } else if (this.basicLogin.password == null) {
-      this.errorMessage = 'Password can not be empty';
+      this.errorMessage = 'Please enter a valid Password';
     } else {
       this.errorMessage = '';
     }
