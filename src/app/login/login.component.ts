@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BasicLogin } from '../core/model/basicLogin';
 import { AuthService } from '../core/firebaseCalls/Auth/auth.service';
+import { Router } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 
 
 @Component({
@@ -13,7 +15,7 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   basicLogin: BasicLogin;
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.basicLogin = new BasicLogin();
@@ -36,7 +38,8 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('displayName', res.user.displayName);
       sessionStorage.setItem('photoURL', res.user.photoURL);
       sessionStorage.setItem('email', res.user.email);
-      console.log(res);
+      this.router.navigate(['/home']);
+      // console.log(res);
     }, err => {
       console.log(err);
       this.errorMessage = err.message;
