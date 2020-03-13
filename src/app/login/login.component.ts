@@ -33,6 +33,9 @@ export class LoginComponent implements OnInit {
     this.auth.doGoogleLogin()
     .then(res => {
      alert('Logged in' + res.displayName);
+    }, err => {
+      console.log(err);
+      this.errorMessage = err.message;
     });
   }
 }
