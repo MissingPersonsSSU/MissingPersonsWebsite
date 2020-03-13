@@ -22,8 +22,19 @@ export class LoginComponent implements OnInit {
   }
 
   SubmitBasicLogin() {
+     this.fieldCheck();
+  }
+
+  fieldCheck() {
+    const at = '@';
+    const dot = '.com';
+    
     if (this.basicLogin.email == null) {
       this.errorMessage = 'Please enter a valid Email';
+    } else if (!this.basicLogin.email.includes(at)) {
+      this.errorMessage = 'Email requires either a \'@\'';
+    } else if (!this.basicLogin.email.includes(dot)) {
+      this.errorMessage = 'Email requires either a \'.\'';
     } else if (this.basicLogin.password == null) {
       this.errorMessage = 'Please enter a valid Password';
     } else {
