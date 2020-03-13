@@ -32,7 +32,11 @@ export class LoginComponent implements OnInit {
   loginGoogle() {
     this.auth.doGoogleLogin()
     .then(res => {
-     alert('Logged in' + res.displayName);
+      sessionStorage.setItem('logintype', 'google');
+      sessionStorage.setItem('displayName', res.user.displayName);
+      sessionStorage.setItem('photoURL', res.user.photoURL);
+      sessionStorage.setItem('email', res.user.email);
+      console.log(res);
     }, err => {
       console.log(err);
       this.errorMessage = err.message;
