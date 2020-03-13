@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   fieldCheck() {
     const at = '@';
     const dot = '.com';
-    
+
     if (this.basicLogin.email == null) {
       this.errorMessage = 'Please enter a valid Email';
     } else if (!this.basicLogin.email.includes(at)) {
