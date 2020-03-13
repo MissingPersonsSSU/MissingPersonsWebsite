@@ -38,6 +38,14 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  loginGuest() {
+    sessionStorage.setItem('logintype', 'guest');
+    sessionStorage.setItem('displayName', 'Guest');
+    sessionStorage.setItem('photoURL', 'Guest');
+    sessionStorage.setItem('email', 'Guest');
+    this.router.navigate(['/home']);
+  }
+
   loginGoogle() {
     this.auth.doGoogleLogin()
     .then(res => {
