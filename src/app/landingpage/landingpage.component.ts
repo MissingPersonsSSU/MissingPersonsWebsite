@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class LandingpageComponent implements OnInit {
 
   displayName = '';
+  displayWarning = false;
+  warning = '';
 
   constructor(private router: Router) { }
 
@@ -16,6 +18,18 @@ export class LandingpageComponent implements OnInit {
     this.displayName = sessionStorage.getItem('displayName');
     if (this.displayName == null) {
       this.router.navigate(['/']);
+    }
+    this.displayWarningOnClick();
+  }
+
+  displayWarningOnClick() {
+    if (this.displayName === 'Guest') {
+      if ( this.displayWarning === true) {
+        this.displayWarning = false;
+      } else {
+        this.displayWarning = true;
+        this.warning = 'You are in Guest Mode, You have restricted access';
+      }
     }
   }
 
