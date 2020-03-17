@@ -14,7 +14,7 @@ export class LandingpageComponent implements OnInit {
 
   filterByGroup = 'All';
 
-  //for now replace with missingUser model
+  // for now replace with missingUser model
   img = null;
   gender = 'female';
 
