@@ -27,9 +27,9 @@
                        <button class="btn btn-outline-primary" id="dropdownBasic3" ngbDropdownToggle>Filter by: {{ filterByGroup }}</button>
                        <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
                         <button ngbDropdownItem (click)="filterLabel('All')">All</button>
-                         <button ngbDropdownItem (click)="filterLabel('Child')">Child</button>
-                         <button ngbDropdownItem (click)="filterLabel('Teen')">Teen</button>
-                         <button ngbDropdownItem (click)="filterLabel('Adult')">Adult</button>
+                         <button ngbDropdownItem (click)="filterLabel('Child')" title=" 0 - 12 ">Child</button>
+                         <button ngbDropdownItem (click)="filterLabel('Teen')" title=" 13 - 18 ">Teen</button>
+                         <button ngbDropdownItem (click)="filterLabel('Adult')" title=" 19 and Greater ">Adult</button>
                        </div>
                      </div>
          </span>
