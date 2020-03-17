@@ -1,5 +1,6 @@
 import { Component, OnInit, ɵALLOW_MULTIPLE_PLATFORMS } from '@angular/core';
 import { Router } from '@angular/router';
+import { MissingPersonModel } from '../models/missingPersonModel';
 
 @Component({
   selector: 'app-landingpage',
@@ -17,16 +18,25 @@ export class LandingpageComponent implements OnInit {
   // for now replace with missingUser model
   img = null;
   gender = 'female';
+  missingPerson: MissingPersonModel;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.securityCheck();
+    this.displayWarningOnClick();
+    this.imageSelector();
+    this.modelinti();
+  }
+
+  securityCheck() {
     this.displayName = sessionStorage.getItem('displayName');
     if (this.displayName == null) {
       this.router.navigate(['/']);
     }
-    this.displayWarningOnClick();
-    this.imageSelector();
+  }
+  modelinti() {
+    this.missingPerson = new MissingPersonModel();
   }
 
   displayWarningOnClick() {
