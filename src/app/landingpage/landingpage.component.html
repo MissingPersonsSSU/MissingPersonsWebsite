@@ -19,9 +19,39 @@
      <!-- Center Panel  -->
      <div class="col-sm-6">
         <div class="col-md col-md-offset-3 centerPanel">
-          this is the main panel
-        </div>
-    </div>
+          this is the main panel <br>
+
+         <span>
+                     <!-- drop down for filtering -->
+                     <div ngbDropdown class="d-inline-block">
+                       <button class="btn btn-outline-primary" id="dropdownBasic3" ngbDropdownToggle>Filter by: {{ filterByGroup }}</button>
+                       <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
+                        <button ngbDropdownItem (click)="filterLabel('All')">All</button>
+                         <button ngbDropdownItem (click)="filterLabel('Child')">Child</button>
+                         <button ngbDropdownItem (click)="filterLabel('Teen')">Teen</button>
+                         <button ngbDropdownItem (click)="filterLabel('Adult')">Adult</button>
+                       </div>
+                     </div>
+         </span>
+
+         <div class="row">
+          <div class="col-sm-4">
+
+            <div class="card" style="margin-top: 50px;">
+              <span style="text-align: center;">
+                <img class="card-img-top imgStyle" [src]="img"  alt=" Card image cap">
+             </span>
+              <div class="card-body">
+                <h5 class="card-title">Persons Name</h5>
+                <p class="card-text">Basic details.</p>
+                <a class="btn btn-primary" (click) ="fullDetails()" style = "color: white;">Go somewhere</a>
+              </div>
+            </div><!--end of card  -->
+
+          </div>
+         </div> <!--end of basic profile  -->
+        </div> <!--end of basic profile row -->
+    </div><!--end of center panel row -->
 
      <!-- Right Panel  -->
     <div class="col-sm-3">

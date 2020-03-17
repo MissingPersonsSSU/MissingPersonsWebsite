@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵALLOW_MULTIPLE_PLATFORMS } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,6 +12,12 @@ export class LandingpageComponent implements OnInit {
   displayWarning = false;
   warning = '';
 
+  filterByGroup = 'All';
+
+  //for now
+  img = null;
+  gender = 'female';
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -20,6 +26,7 @@ export class LandingpageComponent implements OnInit {
       this.router.navigate(['/']);
     }
     this.displayWarningOnClick();
+    this.imageSelector();
   }
 
   displayWarningOnClick() {
@@ -30,6 +37,26 @@ export class LandingpageComponent implements OnInit {
         this.displayWarning = true;
         this.warning = 'You are in Guest Mode, You have restricted access';
       }
+    }
+  }
+
+  filterLabel(filter: any) {
+    this.filterByGroup = filter;
+  }
+
+  imageSelector() {
+    if (this.img == null) {
+      if (this.gender.toLocaleUpperCase() === 'MALE') {
+        this.img = '../../assets/Icons/imgDefaults/icons8-user-male-skin-type-4-64.png';
+      } else {
+        this.img = '../../assets/Icons/imgDefaults/icons8-user-female-skin-type-5-64.png';
+      }
+    }
+  }
+
+  fullDetails() {
+    if (this.displayWarning) {
+      alert('You have Restricted Access');
     }
   }
 

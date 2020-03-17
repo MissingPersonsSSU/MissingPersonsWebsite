@@ -2,9 +2,7 @@
   text-align: center;
   padding-bottom: 1%;
 }
-.row{
-  text-align: center;
-}
+
 
 .insideGuest{
   border-radius: 25px;
@@ -32,4 +30,20 @@
   padding-bottom: 5%;
   border-radius: 25px;
   /* background: #73AD21; */
+}
+
+button {
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  font-family: Arial;
+}
+
+.imgStyle{
+  height: 200px;
+  width: 200px;
+  padding-left: 0px;
 }
