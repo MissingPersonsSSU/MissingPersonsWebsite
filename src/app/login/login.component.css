@@ -79,7 +79,7 @@ Social Stuff */
 .social-items {
   font-size: 25px;
   color: #3b5998;
-
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
